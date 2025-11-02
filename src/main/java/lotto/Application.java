@@ -1,7 +1,6 @@
 package lotto;
 
-import lotto.domain.LottoStore;
-import lotto.domain.WinningNumbers;
+import lotto.domain.*;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
@@ -16,5 +15,8 @@ public class Application {
         String winningInput = InputView.readWinningNumbers();
         String bonusInput = InputView.readBonusNumber();
         WinningNumbers winningNumbers = new WinningNumbers(winningInput, bonusInput);
+
+        LottoResult result = new LottoResult(lottos, winningNumbers);
+        OutputView.printResult(result, purchaseAmount);
     }
 }
