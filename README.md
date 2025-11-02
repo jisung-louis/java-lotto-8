@@ -76,12 +76,12 @@
 ---
 
 ### 6️⃣ 클래스 설계
-- [ ] `Lotto` - 로또 번호 6개를 관리 및 검증
-- [ ] `LottoStore` - 금액 기반 로또 발행
-- [ ] `WinningNumbers` - 당첨 번호 및 보너스 번호 관리
-- [ ] `LottoResult` - 등수 계산 및 통계 집계
-- [ ] `InputView` / `OutputView` - 입력/출력 처리
-- [ ] `Application` - 전체 실행 흐름 통합 (입력 → 처리 → 출력)
+- [x] `Lotto` - 로또 번호 6개를 관리 및 검증
+- [x] `LottoStore` - 금액 기반 로또 발행
+- [x] `WinningNumbers` - 당첨 번호 및 보너스 번호 관리
+- [x] `LottoResult` - 등수 계산 및 통계 집계
+- [x] `InputView` / `OutputView` - 입력/출력 처리
+- [x] `Application` - 전체 실행 흐름 통합 (입력 → 처리 → 출력)
 
 ---
 
@@ -93,9 +93,9 @@
 ---
 
 ### 8️⃣ 테스트
-- [ ] JUnit5 + AssertJ로 도메인 단위 테스트 작성
-- [ ] `Lotto`, `WinningNumbers`, `LottoResult` 클래스 테스트 필수
-- [ ] UI 로직(`System.out`, `Console.readLine()`) 테스트 제외
+- [x] JUnit5 + AssertJ로 도메인 단위 테스트 작성
+- [x] `Lotto`, `WinningNumbers`, `LottoResult` 클래스 테스트 필수
+- [x] UI 로직(`System.out`, `Console.readLine()`) 테스트 제외
 
 ---
 
