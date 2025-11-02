@@ -5,10 +5,16 @@ import camp.nextstep.edu.missionutils.Console;
 public class InputView {
 
     public static int readPurchaseAmount() {
-        System.out.println("구입금액을 입력해 주세요.");
-        String input = Console.readLine();
-        validateAmount(input);
-        return Integer.parseInt(input);
+        while (true) {
+            try {
+                System.out.println("구입금액을 입력해 주세요.");
+                String input = Console.readLine();
+                validateAmount(input);
+                return Integer.parseInt(input);
+            } catch (IllegalArgumentException e) {
+                OutputView.printError(e.getMessage());
+            }
+        }
     }
 
     private static void validateAmount(String input) {
@@ -23,12 +29,24 @@ public class InputView {
     }
 
     public static String readWinningNumbers() {
-        System.out.println("당첨 번호를 입력해 주세요.");
-        return Console.readLine();
+        while (true) {
+            try {
+                System.out.println("당첨 번호를 입력해 주세요.");
+                return Console.readLine();
+            } catch (IllegalArgumentException e) {
+                OutputView.printError(e.getMessage());
+            }
+        }
     }
 
     public static String readBonusNumber() {
-        System.out.println("보너스 번호를 입력해 주세요.");
-        return Console.readLine();
+        while (true) {
+            try {
+                System.out.println("보너스 번호를 입력해 주세요.");
+                return Console.readLine();
+            } catch (IllegalArgumentException e) {
+                OutputView.printError(e.getMessage());
+            }
+        }
     }
 }

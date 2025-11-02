@@ -8,15 +8,19 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        int purchaseAmount = InputView.readPurchaseAmount();
-        List<Lotto> lottos = LottoStore.buyLottos(purchaseAmount);
-        OutputView.printLottos(lottos);
+        try {
+            int purchaseAmount = InputView.readPurchaseAmount();
+            List<Lotto> lottos = LottoStore.buyLottos(purchaseAmount);
+            OutputView.printLottos(lottos);
 
-        String winningInput = InputView.readWinningNumbers();
-        String bonusInput = InputView.readBonusNumber();
-        WinningNumbers winningNumbers = new WinningNumbers(winningInput, bonusInput);
+            String winningInput = InputView.readWinningNumbers();
+            String bonusInput = InputView.readBonusNumber();
+            WinningNumbers winningNumbers = new WinningNumbers(winningInput, bonusInput);
 
-        LottoResult result = new LottoResult(lottos, winningNumbers);
-        OutputView.printResult(result, purchaseAmount);
+            LottoResult result = new LottoResult(lottos, winningNumbers);
+            OutputView.printResult(result, purchaseAmount);
+        } catch (IllegalArgumentException e) {
+            OutputView.printError(e.getMessage());
+        }
     }
 }

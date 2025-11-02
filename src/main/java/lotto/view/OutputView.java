@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.Lotto;
 import lotto.domain.LottoResult;
 import lotto.domain.Rank;
 
@@ -8,9 +9,9 @@ import java.util.Map;
 
 public class OutputView {
 
-    public static void printLottos(List<lotto.Lotto> lottos) {
+    public static void printLottos(List<Lotto> lottos) {
         System.out.println(lottos.size() + "개를 구매했습니다.");
-        for (lotto.Lotto lotto : lottos) {
+        for (Lotto lotto : lottos) {
             System.out.println(lotto.getNumbers());
         }
     }
@@ -29,5 +30,10 @@ public class OutputView {
 
         double profitRate = result.calculateProfitRate(purchaseAmount);
         System.out.printf("총 수익률은 %.1f%%입니다.%n", profitRate);
+    }
+
+    // ✅ 에러 메시지 출력용 추가
+    public static void printError(String message) {
+        System.out.println(message);
     }
 }
